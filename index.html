@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday Game</title>
+  <style>
+    body { margin: 0; background: black; color: white; font-family: sans-serif; text-align: center; }
+    #codeScreen { display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; }
+    input { font-size: 20px; padding: 10px; margin-top: 10px; }
+    button { padding: 10px 20px; font-size: 18px; margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <div id="codeScreen">
+    <h1>Введите код</h1>
+    <input type="text" id="codeInput" placeholder="КОД21">
+    <button onclick="checkCode()">Войти</button>
+    <p id="message"></p>
+  </div>
+  <script>
+    function checkCode() {
+      const code = document.getElementById('codeInput').value;
+      const message = document.getElementById('message');
+      if (code.trim() === 'КОД21') {
+        window.location.href = 'game.html';
+      } else {
+        message.textContent = 'Неверный код';
+      }
+    }
+  </script>
+</body>
+</html>

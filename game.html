@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Corridor</title>
+  <style>
+    body { margin: 0; overflow: hidden; }
+    canvas { display: block; }
+  </style>
+</head>
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/phaser@3.60.0/dist/phaser.js"></script>
+  <script>
+    const config = {
+      type: Phaser.AUTO,
+      width: 800,
+      height: 600,
+      backgroundColor: '#333',
+      scene: {
+        preload,
+        create
+      }
+    };
+
+    const game = new Phaser.Game(config);
+
+    function preload() {
+      this.load.image('hero', 'assets/hero.png');
+    }
+
+    function create() {
+      this.add.text(300, 20, 'Коридор лагеря', { fontSize: '24px', fill: '#fff' });
+      this.add.image(400, 300, 'hero').setScale(4);
+    }
+  </script>
+</body>
+</html>
